@@ -59,23 +59,27 @@ O DARA serve como “única fonte da verdade” (Single Source of Truth) para os
 🗂 Estrutura de Pastas
 --------------------------------------
 DARA/
-├── .github/workflows/sincroniza.yml      # Job do GitHub Actions (ETL diário)
+├── .github/
+│   └── workflows/
+│       └── sincroniza.yml      # Job do GitHub Actions (ETL diário)
 ├── operacoes/
-│   ├── tools/                            # Módulos de análise
-│   ├── config.py                         # Configurações e tokens
-│   ├── database.py                       # Conexão de escrita
-│   ├── db_reader.py                      # Conexão de leitura
-│   ├── google_client.py                  # Cliente de API Google
-│   ├── main.py                           # Orquestrador ETL
-│   └── sincronizador_logica.py           # Lógica "Staging & Swap"
-├── static/test_harness/                  # HTML/CSS/JS de testes
-├── tcf/                                  # Estrutura similar à de 'operacoes'
-├── templates/test_harness.html           # Página de testes
-├── .env                                  # Segredos (ignorado pelo Git)
-├── .gitignore                            # Arquivos ignorados
-├── app.py                                # Servidor Flask
-├── requirements.txt                      # Dependências
-└── sincroniza_github.py                  # Script chamado pelo GitHub Actions
+│   ├── tools/                  # Módulos de análise
+│   ├── config.py               # Configurações e tokens
+│   ├── database.py             # Conexão de escrita
+│   ├── db_reader.py            # Conexão de leitura
+│   ├── google_client.py        # Cliente de API do Google
+│   ├── main.py                 # Orquestrador ETL
+│   └── sincronizador_logica.py # Lógica "Staging & Swap"
+├── static/
+│   └── test_harness/           # HTML/CSS/JS de testes
+├── tcf/                        # Estrutura similar à de 'operacoes'
+├── templates/
+│   └── test_harness.html       # Página de testes
+├── .gitignore                  # Arquivos ignorados
+├── app.py                      # Servidor Flask
+├── requirements.txt            # Dependências
+└── sincroniza_github.py        # Script chamado pelo GitHub Actions
+
 
 --------------------------------------
 🚀 Como Executar Localmente
