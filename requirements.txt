@@ -1,0 +1,14 @@
+Flask
+gspread
+gunicorn
+flask-compress
+google-auth
+oauth2client
+psycopg2-binary
+PyYAML
+pandas
+openpyxl
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+dotenv

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARA - Function Test</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/avatar_dara.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='test_harness/test_harness.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="request-panel">
+            <header>
+                <h1>DARA - Ambiente de Testes</h1>
+                <p>Execute análises diretamente na sua API local.</p>
+            </header>
+
+            <div class="form-group">
+                <label for="apiToken">Token de Autenticação</label>
+                <input type="text" id="apiToken" placeholder="Cole seu token de API local aqui">
+            </div>
+
+            <div class="form-group">
+                <label for="domain-btn">Domínio</label>
+                <div class="custom-select-wrapper" id="domain-wrapper">
+                    <button type="button" class="custom-select-button" id="domain-btn" aria-haspopup="listbox" aria-expanded="false">
+                        <span>Selecione...</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="custom-select-panel" id="domain-panel" role="listbox" hidden>
+                        <input type="text" class="panel-search" placeholder="Pesquisar domínio...">
+                        <ul>
+                            {% for domain in all_tools.keys()|sort %}
+                                <li role="option" data-value="{{ domain }}">{{ domain.upper() }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="analysis-btn">Análise</label>
+                <div class="custom-select-wrapper" id="analysis-wrapper">
+                    <button type="button" class="custom-select-button" id="analysis-btn" aria-haspopup="listbox" aria-expanded="false" disabled>
+                        <span>Selecione um domínio</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="custom-select-panel" id="analysis-panel" role="listbox" hidden>
+                        <input type="text" class="panel-search" placeholder="Pesquisar análise...">
+                        <ul>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pageInput">Página</label>
+                    <input type="number" id="pageInput" placeholder="Ex: 1" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="limitInput">Limite</label>
+                    <input type="number" id="limitInput" placeholder="Ex: 50" min="1">
+                </div>
+            </div>
+            <hr>
+
+            <div id="paramsContainer">
+                <p class="placeholder-text">Selecione uma análise para ver os parâmetros.</p>
+            </div>
+
+            <button id="submitBtn" disabled>Executar Análise</button>
+        </div>
+
+        <div class="response-panel">
+            <div class="response-header">
+                <h2>Resposta da API</h2>
+                <div id="statusDisplay" class="status-badge">Aguardando requisição...</div>
+            </div>
+            <pre><code id="jsonResponse" class="language-json"></code></pre>
+        </div>
+    </div>
+
+    <script id="tools-data" type="application/json">{{ all_tools | tojson }}</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="{{ url_for('static', filename='test_harness/test_harness.js') }}"></script>
+</body>
+</html>
