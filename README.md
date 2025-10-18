@@ -101,25 +101,28 @@ A API rodará em http://127.0.0.1:10000/ e a página de testes em /test.
 --------------------------------------
 📄 Exemplo de .env
 --------------------------------------
-# Tokens da API
-OPERACOES_API_TOKEN=seu_token_secreto_aqui_123
-TCF_API_TOKEN=seu_token_secreto_aqui_456
+DOMAIN_A_API_TOKEN=seu_token_secreto_aqui_123
+DOMAIN_B_API_TOKEN=seu_token_secreto_aqui_456
 
-# Banco de Dados
-OPERACOES_DATABASE_URL_READER="postgresql://user:pass@host:port/db"
-TCF_DATABASE_URL_READER="postgresql://user:pass@host:port/db"
-OPERACOES_DATABASE_URL_WRITER="postgresql://user:pass@host:port/db"
-TCF_DATABASE_URL_WRITER="postgresql://user:pass@host:port/db"
+# --- Banco de Dados (Ex: Supabase) ---
+# Conexão de LEITURA (para a API)
+DOMAIN_A_DATABASE_URL_READER="postgresql://user:pass@host:port/db"
+DOMAIN_B_DATABASE_URL_READER="postgresql://user:pass@host:port/db"
 
-# Google Service Account
-OPERACOES_GOOGLE_CREDENTIALS_JSON='{"type": "service_account", "project_id": ...}'
-TCF_GOOGLE_CREDENTIALS_JSON='{"type": "service_account", "project_id": ...}'
+# Conexão de ESCRITA (para o ETL)
+DOMAIN_A_DATABASE_URL_WRITER="postgresql://user:pass@host:port/db"
+DOMAIN_B_DATABASE_URL_WRITER="postgresql://user:pass@host:port/db"
 
-# Planilhas
-OPERACOES_PLANILHAS_JSON='[{"id":"id_google_sheet_1", "prefix":"nome_tabela_destino_1"}]'
-OPERACOES_ARQUIVOS_EXCEL_JSON='[{"id":"id_google_drive_excel_1", "prefix":"nome_tabela_excel_1"}]'
-TCF_PLANILHAS_JSON='[{"id":"id_google_sheet_2", "prefix":"nome_tabela_destino_2"}]'
-TCF_ARQUIVOS_EXCEL_JSON='[]'
+# --- Google Service Account (JSON em uma linha) ---
+DOMAIN_A_GOOGLE_CREDENTIALS_JSON='{"type": "service_account", "project_id": ...}'
+DOMAIN_B_GOOGLE_CREDENTIALS_JSON='{"type": "service_account", "project_id": ...}'
+
+# --- Mapeamento de Planilhas (JSON em uma linha) ---
+DOMAIN_A_PLANILHAS_JSON='[{"id":"id_google_sheet_1", "prefix":"nome_tabela_destino_1"}]'
+DOMAIN_A_ARQUIVOS_EXCEL_JSON='[{"id":"id_google_drive_excel_1", "prefix":"nome_tabela_excel_1"}]'
+DOMAIN_B_PLANILHAS_JSON='[{"id":"id_google_sheet_2", "prefix":"nome_tabela_destino_2"}]'
+DOMAIN_B_ARQUIVOS_EXCEL_JSON='[]'
+
 
 --------------------------------------
 ☁️ Deploy & Automação (CI/CD)
