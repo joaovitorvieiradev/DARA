@@ -6,7 +6,7 @@
 Uma API de análise de dados e pipeline ETL construída para Business Intelligence.
 
 
-## 🏷️ Tecnologias (Badges)
+🏷️ **Tecnologias (Badges)**
 ```
 - Python 3.10
 - Flask
@@ -15,7 +15,7 @@ Uma API de análise de dados e pipeline ETL construída para Business Intelligen
 - GitHub Actions
 ```
 
-## 🎯 Visão Geral do Projeto
+🎯 **Visão Geral do Projeto**
 
 O DARA foi desenvolvido como uma solução de Business Intelligence para centralizar, processar e analisar dados de negócio de forma automatizada.
 
@@ -28,7 +28,7 @@ Ele é uma solução de back-end completa que:
 O DARA serve como “única fonte da verdade” (Single Source of Truth) para os dados da empresa, pronto para integrar com frontends ou agentes de IA.
 
 
-##🛠️ Stack de Tecnologia
+🛠️ **Stack de Tecnologia**
 
 - **Backend:** Python 3.10, Flask
 - **Banco de Dados:** PostgreSQL (Supabase)
@@ -38,7 +38,7 @@ O DARA serve como “única fonte da verdade” (Single Source of Truth) para os
 - **Frontend (Testes):** HTML, CSS, JavaScript
 
 
-##✨ Principais Funcionalidades
+✨ **Principais Funcionalidades**
 
 - **Pipeline de ETL “Staging & Swap”:** Atualização atômica de tabelas, garantindo zero downtime.
 - **API Multi-Domínio:** Separação de lógicas de negócio por domínio (/operacoes e /tcf).
@@ -47,7 +47,7 @@ O DARA serve como “única fonte da verdade” (Single Source of Truth) para os
 - **Ambiente de Testes:** Interface web local (/test) para depuração e validação.
 
 
-##🌊 Fluxo de Dados (Arquitetura)
+🌊 **Fluxo de Dados (Arquitetura)**
 
 [Fontes (Google Sheets/Excel)]
 → [GitHub Actions (Job Diário)]
@@ -57,7 +57,7 @@ O DARA serve como “única fonte da verdade” (Single Source of Truth) para os
 → [Cliente (App, Power BI, IA)]
 
 
-##🗂 Estrutura de Pastas
+🗂 **Estrutura de Pastas**
 
 ```
 DARA/
@@ -84,7 +84,7 @@ DARA/
 ```
 
 
-##🚀 Como Executar Localmente
+🚀 **Como Executar Localmente**
 ```
 1. Clone o repositório:
    git clone https://github.com/seu-usuario/dara.git
@@ -106,7 +106,7 @@ A API rodará em http://127.0.0.1:10000/ e a página de testes em /test.
 ```
 
 
-##📄 Exemplo de .env
+📄 **Exemplo de .env**
 
 ```
 DOMAIN_A_API_TOKEN=seu_token_secreto_aqui_123
@@ -132,7 +132,7 @@ DOMAIN_B_PLANILHAS_JSON='[{"id":"id_google_sheet_2", "prefix":"nome_tabela_desti
 DOMAIN_B_ARQUIVOS_EXCEL_JSON='[]'
 ```
 
-##☁️ Deploy & Automação (CI/CD)
+☁️ **Deploy & Automação (CI/CD)**
 
 🔹 **Deploy da API (Render)**
 - Serviço: Web Service
@@ -147,6 +147,6 @@ DOMAIN_B_ARQUIVOS_EXCEL_JSON='[]'
 - Credenciais de escrita e Google são configuradas como Secrets
 
 
-##👨‍💻 Autor
+👨‍💻 **Autor**
 
-Feito por ###João Vitor  
+Feito por **João Vitor**
