@@ -58,6 +58,7 @@ O DARA serve como “única fonte da verdade” (Single Source of Truth) para os
 --------------------------------------
 🗂 Estrutura de Pastas
 --------------------------------------
+```
 DARA/
 ├── .github/
 │   └── workflows/
@@ -79,7 +80,7 @@ DARA/
 ├── app.py                      # Servidor Flask
 ├── requirements.txt            # Dependências
 └── sincroniza_github.py        # Script chamado pelo GitHub Actions
-
+```
 
 --------------------------------------
 🚀 Como Executar Localmente
